@@ -30,7 +30,7 @@ addons:
 before_install:
 - echo "deb http://http.debian.net/debian jessie-backports main" | sudo tee -a /etc/apt/sources.list
 - sudo apt-get update -y
-- sudo apt-get install libgrpc-dev -y --force-yes
+- sudo apt-get install libgrpc-dev
 
 install:
   - if [[ "$TRAVIS_OS_NAME" != "osx" && "$CXX" = "g++" ]]; then export CXX="g++-4.8" CC="gcc-4.8"; fi
