@@ -48,8 +48,8 @@ before_install:
 - git submodule update --init
 - sudo make
 - sudo make install
-- cd $work_path
 
+- cd $work_path
 
 
 
