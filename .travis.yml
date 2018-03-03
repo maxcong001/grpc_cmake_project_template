@@ -25,8 +25,8 @@ addons:
       - libboost-all-dev
 
 before_install:
-- chmod 755 build.sh
-- sudo ./build.sh
+- chmod 755 build_env.sh
+- sudo ./build_env.sh
 install:
   - if [[ "$TRAVIS_OS_NAME" != "osx" && "$CXX" = "g++" ]]; then export CXX="g++-4.8" CC="gcc-4.8"; fi
 
