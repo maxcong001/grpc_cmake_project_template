@@ -1,8 +1,8 @@
 {
-    "remotePath": "/home/mcong/GRPC-client",
-    "host": "135.251.166.251",
-    "username": "mcong",
-    "password": "mcong",
+    "remotePath": "/home/max/GRPC-client",
+    "host": "192.168.56.102",
+    "username": "max",
+    "password": "savage221",
     "port": 22,
     "secure": false,
     "protocol": "sftp",

@@ -1,15 +1,14 @@
 MESSAGE(STATUS "Gen proto file")
 
-find_package(Protobuf REQUIRED)
-
 # GRPC and Protocol Buffers libraries location
 list(APPEND CMAKE_PREFIX_PATH "/opt/grpc" "/opt/protobuf")
 
 # Cmake find modules
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/cmake")
 
-find_package(Protobuf REQUIRED)
-find_package(GRPC REQUIRED)
+
+#find_package(Protobuf REQUIRED)
+#find_package(GRPC REQUIRED)
 
 set(PROTOS_PATH  ${PROJECT_SOURCE_DIR}/protos)
 set(PROTOS

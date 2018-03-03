@@ -22,14 +22,12 @@ addons:
       - libevent-dev
       - gcc-4.8
       - g++-4.8
-      - libgrpc-dev
-
-
+      - libboost-all-dev
 
 before_install:
-
-
+- chmod 755 build.sh
+- sudo ./build.sh
 install:
   - if [[ "$TRAVIS_OS_NAME" != "osx" && "$CXX" = "g++" ]]; then export CXX="g++-4.8" CC="gcc-4.8"; fi
 
-script: mkdir build && cd build && cmake .. && make && ./bin/example
+script: mkdir -p build && cd build && cmake -DENABLE_TEST=ON .. && make && ./bin/example
