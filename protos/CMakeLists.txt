@@ -1,15 +1,14 @@
 MESSAGE(STATUS "Gen proto file")
 
-find_package(Protobuf REQUIRED)
-
 # GRPC and Protocol Buffers libraries location
 list(APPEND CMAKE_PREFIX_PATH "/opt/grpc" "/opt/protobuf")
 
 # Cmake find modules
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/cmake")
 
-find_package(Protobuf REQUIRED)
-find_package(GRPC REQUIRED)
+
+#find_package(Protobuf REQUIRED)
+#find_package(GRPC REQUIRED)
 
 set(PROTOS_PATH  ${PROJECT_SOURCE_DIR}/protos)
 set(PROTOS
@@ -28,7 +27,7 @@ set(GRPC_HDRS "${PROJECT_SOURCE_DIR}/include/gen_target/dbproxy.grpc.pb.h")
 add_custom_target(
     GRPCTarget
     COMMAND protoc  --cpp_out "${PROTOS_PATH}" --proto_path "${PROTOS_PATH}" ${PROTOS}
-    COMMAND protoc  --grpc_out "${PROTOS_PATH}" --proto_path "${PROTOS_PATH}" --plugin=protoc-gen-grpc="/usr/local/bin/grpc_cpp_plugin" ${PROTOS}
+    COMMAND protoc  --grpc_out "${PROTOS_PATH}" --proto_path "${PROTOS_PATH}" --plugin=protoc-gen-grpc="/usr/bin/grpc_cpp_plugin" ${PROTOS}
     COMMAND cp ${PROTOS_PATH}/*.cc ${PROJECT_SOURCE_DIR}/src/gen_target
     COMMAND cp ${PROTOS_PATH}/*.h ${PROJECT_SOURCE_DIR}/include/gen_target
     COMMAND rm ${PROTOS_PATH}/*.cc

@@ -38,7 +38,7 @@ MESSAGE(STATUS "CMAKE_C_FLAGS: " ${CMAKE_C_FLAGS})
 MESSAGE(STATUS "CMAKE_CXX_FLAGS: " ${CMAKE_CXX_FLAGS})
 
 find_package(Boost REQUIRED)
-find_package(Protobuf REQUIRED)
+#find_package(Protobuf REQUIRED)
 message(STATUS "Using protobuf ${protobuf_VERSION}")
 #find_package(gRPC CONFIG REQUIRED)
 
