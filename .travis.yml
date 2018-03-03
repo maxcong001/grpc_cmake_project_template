@@ -39,7 +39,7 @@ before_install:
 - sudo make install 
 - sudo ldconfig
 
-- sudo apt install -y gcc-c++ autoconf libtool cmake
+- sudo apt install -y autoconf libtool cmake
 - git clone https://github.com/grpc/grpc.git
 - cd grpc
 - cd grpc
