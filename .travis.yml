@@ -28,12 +28,7 @@ addons:
 
 
 before_install:
-- echo "deb http://http.debian.net/debian jessie-backports main" | sudo tee -a /etc/apt/sources.list
-- sudo apt-get update -y
-- sudo apt-get install libgrpc-dev --allow-unauthenticated
-- sudo apt-get install libgrpc++dev --allow-unauthenticated
-- sudo apt-get install protobuf-compiler
-- sudo apt-get install protobuf-compiler-grpc
+
 - git clone https://github.com/google/protobuf.git 
 - sudo apt-get install autoconf automake libtool curl make g++ unzip 
 - ./autogen.sh 
