@@ -27,7 +27,7 @@ set(GRPC_HDRS "${PROJECT_SOURCE_DIR}/include/gen_target/dbproxy.grpc.pb.h")
 add_custom_target(
     GRPCTarget
     COMMAND protoc  --cpp_out "${PROTOS_PATH}" --proto_path "${PROTOS_PATH}" ${PROTOS}
-    COMMAND protoc  --grpc_out "${PROTOS_PATH}" --proto_path "${PROTOS_PATH}" --plugin=protoc-gen-grpc="/usr/bin/grpc_cpp_plugin" ${PROTOS}
+    COMMAND protoc  --grpc_out "${PROTOS_PATH}" --proto_path "${PROTOS_PATH}" --plugin=protoc-gen-grpc="/usr/local/bin/grpc_cpp_plugin" ${PROTOS}
     COMMAND cp ${PROTOS_PATH}/*.cc ${PROJECT_SOURCE_DIR}/src/gen_target
     COMMAND cp ${PROTOS_PATH}/*.h ${PROJECT_SOURCE_DIR}/include/gen_target
     COMMAND rm ${PROTOS_PATH}/*.cc
