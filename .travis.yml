@@ -29,6 +29,9 @@ addons:
 
 before_install:
 
+- work_path=$(dirname $(readlink -f $0))
+- echo 'base working dir is :' $work_path
+- cd $work_path
 - git clone https://github.com/google/protobuf.git 
 - cd protobuf
 - sudo apt-get install autoconf automake libtool curl make g++ unzip 
@@ -43,9 +46,9 @@ before_install:
 - git clone https://github.com/grpc/grpc.git
 - cd grpc
 - git submodule update --init
-- make
-- make install
-
+- sudo make
+- sudo make install
+- cd $work_path
 
 
 
