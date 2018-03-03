@@ -30,6 +30,7 @@ addons:
 before_install:
 
 - git clone https://github.com/google/protobuf.git 
+- cd protobuf
 - sudo apt-get install autoconf automake libtool curl make g++ unzip 
 - ./autogen.sh 
 - ./configure 
@@ -37,9 +38,10 @@ before_install:
 - make check 
 - sudo make install 
 - sudo ldconfig
-- git clone https://github.com/grpc/grpc.git
+
 - sudo apt install -y gcc-c++ autoconf libtool cmake
 - git clone https://github.com/grpc/grpc.git
+- cd grpc
 - cd grpc
 - git submodule update --init
 - make
