@@ -30,8 +30,8 @@
 #include <string>
 
 #include <grpc++/grpc++.h>
-#include "gen_target/dbproxy.pb.h"
-#include "gen_target/dbproxy.grpc.pb.h"
+#include "gen_target/proto_example.pb.h"
+#include "gen_target/proto_example.grpc.pb.h"
 
 using grpc::Channel;
 using grpc::ClientContext;
