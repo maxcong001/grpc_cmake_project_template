@@ -12,17 +12,17 @@ list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/cmake")
 
 set(PROTOS_PATH  ${PROJECT_SOURCE_DIR}/protos)
 set(PROTOS
-    ${PROTOS_PATH}/dbproxy.proto
+    ${PROTOS_PATH}/proto_example.proto
 )
 
 include_directories(${PROTO_SRC_DIR})
 
 file(MAKE_DIRECTORY ${PROJECT_SOURCE_DIR}/include/gen_target)
 file(MAKE_DIRECTORY ${PROJECT_SOURCE_DIR}/src/gen_target)
-set(PROTO_SRCS "${PROJECT_SOURCE_DIR}/src/gen_target/dbproxy.pb.cc")
-set(PROTO_HDRS "${PROJECT_SOURCE_DIR}/include/gen_target/dbproxy.pb.h")
-set(GRPC_SRCS "${PROJECT_SOURCE_DIR}/src/gen_target/dbproxy.grpc.pb.cc")
-set(GRPC_HDRS "${PROJECT_SOURCE_DIR}/include/gen_target/dbproxy.grpc.pb.h")
+set(PROTO_SRCS "${PROJECT_SOURCE_DIR}/src/gen_target/proto_example.pb.cc")
+set(PROTO_HDRS "${PROJECT_SOURCE_DIR}/include/gen_target/proto_example.pb.h")
+set(GRPC_SRCS "${PROJECT_SOURCE_DIR}/src/gen_target/proto_example.grpc.pb.cc")
+set(GRPC_HDRS "${PROJECT_SOURCE_DIR}/include/gen_target/proto_example.grpc.pb.h")
 
 add_custom_target(
     GRPCTarget
